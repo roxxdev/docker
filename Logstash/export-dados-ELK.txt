@@ -1,0 +1,19 @@
+input {
+        elasticsearch { 
+        hosts => ""
+        index => "vts*" 
+        query => '{"query": {"query_string": {"query": "*"}} } ' 
+        size => 500 
+        scroll => "10m" 
+        docinfo => true
+        user => ""
+        password => ""
+        
+      } 
+}      
+output {
+ elasticsearch{
+ hosts => ""
+ index => ""
+ }
+}
